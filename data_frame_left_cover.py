@@ -1,5 +1,5 @@
 import tkinter as tk
-from ttkbootstrap import ttk
+from tkinter import ttk
 
 def dataFrameLeftCover(data_frame):
     custom_font=('Helvetica', 14, 'bold')

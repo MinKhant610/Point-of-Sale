@@ -1,5 +1,5 @@
 import tkinter as tk
-from ttkbootstrap import ttk
+from tkinter import ttk
 
 def calFrame(button_frame, sub_total_input, tax_input, total_input):
     custom_font=('Helvetica', 14, 'bold')

@@ -1,8 +1,9 @@
 import tkinter as tk
-from ttkbootstrap import ttk
+from tkinter import ttk
 from calculate_frame import calFrame
+from change_frame import changeFrame
 
-def buttonFrame(main_frame, sub_total_input, tax_input, total_input):
+def buttonFrame(main_frame, sub_total_input, tax_input, total_input, choice, cash_input, change_input):
     # Button Frame
     button_frame = tk.Frame(
         main_frame,
@@ -17,18 +18,7 @@ def buttonFrame(main_frame, sub_total_input, tax_input, total_input):
     button_frame.pack(side='bottom')
 
     calFrame(button_frame, sub_total_input, tax_input, total_input)
-
-    # Change Frame
-    change_frame = tk.Frame(
-        button_frame,
-        bd=3,
-        width=500,
-        height=140,
-        pady=2,
-        relief='ridge',
-        bg='#ffffff'
-    )
-    change_frame.grid(row=0, column=1, padx=4)
+    changeFrame(button_frame, choice, cash_input, change_input)
 
     # Remove Frame
     remove_frame = tk.Frame(

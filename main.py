@@ -1,5 +1,5 @@
 import tkinter as tk 
-from ttkbootstrap import ttk
+from tkinter import ttk
 from time import strftime
 from datetime import datetime
 from button_frame import buttonFrame
@@ -57,7 +57,8 @@ class POS:
         main_frame = tk.Frame(self.root, bg='#8face1')
         main_frame.grid(padx=8, pady=5)
 
-        buttonFrame(main_frame, sub_total_input, tax_input, total_input)
+        buttonFrame(main_frame, sub_total_input, tax_input, 
+        total_input, choice, cash_input, change_input)
         
         data_frame = tk.Frame(
             main_frame,
