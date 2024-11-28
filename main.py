@@ -87,6 +87,7 @@ class POS:
 def main():
     root = tk.Tk()
     pos = POS(root)
+    style = ttk.Style()
     root.mainloop()
 
 if __name__ == '__main__':
