@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
+from change_button_frame import changeButtonFrame
 
 def dataFrameLeftCover(data_frame):
     custom_font=('Helvetica', 14, 'bold')
@@ -17,16 +18,7 @@ def dataFrameLeftCover(data_frame):
     
     data_frame_left_cover.pack(side='left', padx=5)
 
-    chage_button_frame = tk.Frame(
-        data_frame_left_cover,
-        bd=3,
-        width=300,
-        height=460,
-        pady=5,
-        relief='ridge',
-        bg='#ffffff'
-    )
-    chage_button_frame.pack(side='left', padx=4)
+    changeButtonFrame(data_frame_left_cover)
 
     recipt_frame = tk.Frame(
         data_frame_left_cover,
