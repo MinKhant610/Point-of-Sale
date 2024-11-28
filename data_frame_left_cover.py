@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 from change_button_frame import changeButtonFrame
+from receipt_frame import receiptFrame
 
 def dataFrameLeftCover(data_frame):
     custom_font=('Helvetica', 14, 'bold')
@@ -20,16 +21,6 @@ def dataFrameLeftCover(data_frame):
 
     changeButtonFrame(data_frame_left_cover)
 
-    recipt_frame = tk.Frame(
-        data_frame_left_cover,
-        bd=3,
-        width=200,
-        height=400,
-        pady=5,
-        padx=1,
-        relief='ridge',
-        bg='#ffffff'
-    )
-    recipt_frame.pack(side='right')
+    receiptFrame(data_frame_left_cover)
     
     return data_frame_left_cover

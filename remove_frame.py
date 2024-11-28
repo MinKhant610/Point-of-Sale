@@ -18,7 +18,7 @@ def removeFrame(button_frame):
         height=140,
         pady=4,
         relief="ridge",
-        bg="#dd0329",
+        bg="#8face1",
     )
     remove_frame.grid(row=0, column=2, padx=4)
 

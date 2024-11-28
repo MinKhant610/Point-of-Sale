@@ -5,13 +5,14 @@ from datetime import datetime
 from button_frame import buttonFrame
 from food_item_frame import foodItemFrame
 from data_frame_left_cover import dataFrameLeftCover
+from heading_frame import headingFrame
+from footer_frame import footerFrame
 import tempfile
 import os
 
-
 # color code 
+#8face1 => main color 
 #dd0329
-#8face1
 #e0f1ff
 #667799
 
@@ -57,6 +58,8 @@ class POS:
         main_frame = tk.Frame(self.root, bg='#8face1')
         main_frame.grid(padx=8, pady=5)
 
+        headingFrame(main_frame)
+        footerFrame(main_frame)
         buttonFrame(main_frame, sub_total_input, tax_input, 
         total_input, choice, cash_input, change_input)
         
@@ -78,7 +81,7 @@ class POS:
         #food item frame is data frame right cover
         foodItemFrame(data_frame)
 
-        
+
 
         
 
