@@ -78,8 +78,8 @@ class POS:
         #food item frame is data frame right cover
         foodItemFrame(data_frame)
 
-
         
+
         
 
 
