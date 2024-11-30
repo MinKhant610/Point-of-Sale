@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import ttk 
 
 def receiptFrame(data_frame_left_cover):
+    global text_receipt
     receipt_frame = tk.Frame(
         data_frame_left_cover,
         bd=3,
@@ -33,6 +34,10 @@ def receiptFrame(data_frame_left_cover):
     pos_record.bind('<ButtonRelease-1>')
     text_receipt = tk.Text(receipt_frame, width=90, height=2, font=('Helvetica', 6, 'bold'))
     text_receipt.pack()
-    text_receipt.insert('end', 'Item\t\t\t\t Qty\t\t\t\t Amount\t\n')
+    text_receipt.insert('end', 'Item\t\t\t Qty\t\t\t Amount\t\n')
 
     return receipt_frame, pos_record, text_receipt
+
+def getReceipt():
+    global text_receipt
+    return text_receipt

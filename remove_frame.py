@@ -1,5 +1,17 @@
 import tkinter as tk
 from tkinter import ttk
+from receipt_frame import getReceipt
+import tempfile
+import os 
+import subprocess
+
+def printSlip():
+    text = getReceipt()
+    slip = text.get('1.0', 'end-1c')
+    filename = tempfile.mktemp('.txt')
+    open(filename, 'w').write(slip)
+    subprocess.run(['open', filename], check=True)
+    print(slip)
 
 def removeFrame(button_frame):
     custom_font = ('Helvetica', 16, 'normal')
@@ -31,7 +43,7 @@ def removeFrame(button_frame):
     reset_btn = ttk.Button(remove_frame, text="Reset", style="Custom.TButton", width=10)
     reset_btn.grid(row=1, column=0, padx=5, pady=10)
 
-    print_btn = ttk.Button(remove_frame, text="Print", style="Custom.TButton", width=10)
+    print_btn = ttk.Button(remove_frame, text="Print", style="Custom.TButton", width=10, command=printSlip)
     print_btn.grid(row=1, column=1, padx=5, pady=10)
 
     return remove_frame
