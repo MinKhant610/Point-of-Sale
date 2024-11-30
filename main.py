@@ -25,7 +25,7 @@ class POS:
         self.input_value = True
         
         global operator
-        global sub_total_input, tax_input, total_input
+        global sub_total_input, tax_input, total_input, cash_input
         operator = ''
         change_input = tk.StringVar()
         cash_input = tk.StringVar() 
@@ -57,7 +57,7 @@ class POS:
         data_frame.pack(side='bottom')
 
         custom_font=('Helvetica', 14, 'bold')
-        frame, get_pos_record, text = dataFrameLeftCover(data_frame)
+        frame, get_pos_record, text = dataFrameLeftCover(data_frame, operator, cash_input)
         #food item frame is data frame right cover
         foodItemFrame(
             data_frame,

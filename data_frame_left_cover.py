@@ -3,7 +3,7 @@ from tkinter import ttk
 from change_button_frame import changeButtonFrame
 from receipt_frame import receiptFrame
 
-def dataFrameLeftCover(data_frame):
+def dataFrameLeftCover(data_frame, operator, cash_input):
     custom_font=('Helvetica', 14, 'bold')
     data_frame_left_cover = tk.LabelFrame(
         data_frame,
@@ -19,7 +19,7 @@ def dataFrameLeftCover(data_frame):
     
     data_frame_left_cover.pack(side='left', padx=5)
 
-    changeButtonFrame(data_frame_left_cover)
+    changeButtonFrame(data_frame_left_cover, operator, cash_input)
 
     frame, get_pos_record, text = receiptFrame(data_frame_left_cover)
     
