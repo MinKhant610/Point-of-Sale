@@ -6,7 +6,7 @@ def removeFrame(button_frame):
     style = ttk.Style()
     style.configure(
         "Custom.TButton",
-        background="#dd0329",
+        background="#8face1",
         foreground="black",
         font=custom_font,
     )

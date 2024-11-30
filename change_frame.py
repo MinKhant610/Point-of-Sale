@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import ttk 
 
 def changeFrame(button_frame, choice, cash_input, change_input):
-    custom_font=('Helvetica', 15, 'bold')
+    custom_font=('Helvetica', 18, 'bold')
     change_frame = tk.Frame(
         button_frame,
         bd=3,
@@ -21,15 +21,15 @@ def changeFrame(button_frame, choice, cash_input, change_input):
     change = tk.Label(change_frame, text='Change', font=custom_font, foreground='white', bg='#8face1') 
 
     payment_entry = ttk.Combobox(change_frame, font=custom_font,
-    width=34, state='readonly', textvariable=choice, justify='right')
-    payment_entry['values'] = ('', 'K Pay', 'Wave', 'CB Pay', 'AYA Pay')
+    width=30, state='readonly', textvariable=choice, justify='right')
+    payment_entry['values'] = ('', 'Cash', 'K Pay', 'Wave', 'CB Pay', 'AYA Pay')
     payment_entry.current(0)
 
-    cost_entry = tk.Entry(change_frame, font=custom_font, width=34, 
+    cost_entry = tk.Entry(change_frame, font=custom_font, width=30, 
     textvariable=cash_input, justify='right')
     cost_entry.insert(0, '0')
 
-    change_entry = tk.Entry(change_frame, font=custom_font, width=34, 
+    change_entry = tk.Entry(change_frame, font=custom_font, width=30, 
     textvariable=change_input, justify='right')
 
     method_of_payment.grid(row=0, column=0, padx=5, pady=2)

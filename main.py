@@ -23,29 +23,9 @@ class POS:
         self.root.geometry('1380x780+0+0')
         self.root.configure(bg='#8face1')
         self.input_value = True
-
-        # Variables
-        self.coffee_images = []
-        for i in range(1, 7):
-            image = tk.PhotoImage(f'images/coffee{i}.gif')
-            self.coffee_images.append(image)
-
-        self.cake_images = []
-        for i in range(1, 7):
-            image = tk.PhotoImage(f'images/cake{i}.gif')
-            self.cake_images.append(image)
-
-        self.juice_images = []
-        for i in range(1, 7):
-            image = tk.PhotoImage(f'images/juice{i}.gif')
-            self.juice_images.append(image)
-        
-        self.fruit_images = []
-        for i in range(1, 7):
-            image = tk.PhotoImage(f'images/fruit{i}.gif')
-            self.fruit_images.append(image)
         
         global operator
+        global sub_total_input, tax_input, total_input
         operator = ''
         change_input = tk.StringVar()
         cash_input = tk.StringVar() 
@@ -77,9 +57,16 @@ class POS:
         data_frame.pack(side='bottom')
 
         custom_font=('Helvetica', 14, 'bold')
-        dataFrameLeftCover(data_frame)
+        frame, get_pos_record, text = dataFrameLeftCover(data_frame)
         #food item frame is data frame right cover
-        foodItemFrame(data_frame)
+        foodItemFrame(
+            data_frame,
+            get_pos_record,
+            text,
+            sub_total_input,
+            tax_input,
+            total_input
+            )
 
 
 

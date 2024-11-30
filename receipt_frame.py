@@ -35,4 +35,4 @@ def receiptFrame(data_frame_left_cover):
     text_receipt.pack()
     text_receipt.insert('end', 'Item\t\t\t\t Qty\t\t\t\t Amount\t\n')
 
-    return receipt_frame
+    return receipt_frame, pos_record, text_receipt

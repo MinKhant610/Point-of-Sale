@@ -21,6 +21,6 @@ def dataFrameLeftCover(data_frame):
 
     changeButtonFrame(data_frame_left_cover)
 
-    receiptFrame(data_frame_left_cover)
+    frame, get_pos_record, text = receiptFrame(data_frame_left_cover)
     
-    return data_frame_left_cover
+    return data_frame_left_cover, get_pos_record, text
