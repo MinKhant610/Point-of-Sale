@@ -53,7 +53,20 @@ def clearDisplay():
         pos_record.delete(child)
 
 def removeItem():
-    pass 
+    pos_record = getPosRecord()
+    global cash, change, sub_total, total, tax
+    item_cost = 0 
+    tax_cost = 5 
+    selected_item = pos_record.selection()[0]
+    pos_record.delete(selected_item)
+    
+    for child in pos_record.get_children():
+        item_cost += float(pos_record.item(child, 'values')[2])
+    sub_total.set(f'Ks {item_cost:.2f}')
+    tax.set(f'Ks {(item_cost * tax_cost / 100):.2f}')
+    total.set(f'Ks {(item_cost + (item_cost * tax_cost / 100)):.2f}')
+    giveChange()
+
     
 
 def removeFrame(button_frame, choice, cash_input, change_input, operator, sub_total_input, tax_input, total_input):
@@ -88,7 +101,7 @@ def removeFrame(button_frame, choice, cash_input, change_input, operator, sub_to
     pay_btn = ttk.Button(remove_frame, text="Pay", style="Custom.TButton", width=10, command=giveChange)
     pay_btn.grid(row=0, column=0, padx=5, pady=10)
 
-    remove_btn = ttk.Button(remove_frame, text="Remove Item", style="Custom.TButton", width=10)
+    remove_btn = ttk.Button(remove_frame, text="Remove Item", style="Custom.TButton", width=10, command=removeItem)
     remove_btn.grid(row=0, column=1, padx=5, pady=10)
 
     reset_btn = ttk.Button(remove_frame, text="Reset", style="Custom.TButton", width=10, command=clearDisplay)
