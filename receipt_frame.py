@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import ttk 
 
 def receiptFrame(data_frame_left_cover):
-    global text_receipt
+    global text_receipt, pos_record
     receipt_frame = tk.Frame(
         data_frame_left_cover,
         bd=3,
@@ -41,3 +41,7 @@ def receiptFrame(data_frame_left_cover):
 def getReceipt():
     global text_receipt
     return text_receipt
+
+def getPosRecord():
+    global pos_record
+    return pos_record

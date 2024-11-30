@@ -7,14 +7,16 @@ def btnClick(numbers):
     cash.set(operator_)
 
 def btnClear():
-    global cash, operator_
+    global cash, operator_, change
     operator_ = ''
     cash.set('0')
+    change.set('')
 
-def changeButtonFrame(data_frame_left_cover, operator, cash_input):
-    global operator_, cash
+def changeButtonFrame(data_frame_left_cover, operator, cash_input, change_input):
+    global operator_, cash, change
     operator_ = operator
     cash = cash_input
+    change = change_input
     custom_font = ('Helvetica', 16, 'bold')
     change_button_frame = tk.Frame(
         data_frame_left_cover,

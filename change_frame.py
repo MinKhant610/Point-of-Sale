@@ -3,6 +3,7 @@ from tkinter import ttk
 
 def changeFrame(button_frame, choice, cash_input, change_input):
     custom_font=('Helvetica', 18, 'bold')
+    global cost_entry
     change_frame = tk.Frame(
         button_frame,
         bd=3,
@@ -27,7 +28,6 @@ def changeFrame(button_frame, choice, cash_input, change_input):
 
     cost_entry = tk.Entry(change_frame, font=custom_font, width=30, 
     textvariable=cash_input, justify='right')
-    cost_entry.insert(0, '0')
 
     change_entry = tk.Entry(change_frame, font=custom_font, width=30, 
     textvariable=change_input, justify='right')
@@ -41,3 +41,7 @@ def changeFrame(button_frame, choice, cash_input, change_input):
     change_entry.grid(row=2, column=1, padx=5, pady=5)
 
     return change_frame
+
+def getCostEntry():
+    global cost_entry
+    return cost_entry

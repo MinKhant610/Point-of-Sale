@@ -1,14 +1,11 @@
 import tkinter as tk 
 from tkinter import ttk
-from time import strftime
-from datetime import datetime
 from button_frame import buttonFrame
 from food_item_frame import foodItemFrame
 from data_frame_left_cover import dataFrameLeftCover
 from heading_frame import headingFrame
 from footer_frame import footerFrame
-import tempfile
-import os
+
 
 # color code 
 #8face1 => main color 
@@ -24,8 +21,8 @@ class POS:
         self.root.configure(bg='#8face1')
         self.input_value = True
         
-        global operator
-        global sub_total_input, tax_input, total_input, cash_input
+        global operator, choice
+        global sub_total_input, tax_input, total_input, cash_input, change_input
         operator = ''
         change_input = tk.StringVar()
         cash_input = tk.StringVar() 
@@ -41,7 +38,7 @@ class POS:
         headingFrame(main_frame)
         footerFrame(main_frame)
         buttonFrame(main_frame, sub_total_input, tax_input, 
-        total_input, choice, cash_input, change_input)
+        total_input, choice, cash_input, change_input, operator)
         
         data_frame = tk.Frame(
             main_frame,
@@ -57,7 +54,7 @@ class POS:
         data_frame.pack(side='bottom')
 
         custom_font=('Helvetica', 14, 'bold')
-        frame, get_pos_record, text = dataFrameLeftCover(data_frame, operator, cash_input)
+        frame, get_pos_record, text = dataFrameLeftCover(data_frame, operator, cash_input, change_input)
         #food item frame is data frame right cover
         foodItemFrame(
             data_frame,

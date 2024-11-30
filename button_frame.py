@@ -4,7 +4,7 @@ from calculate_frame import calFrame
 from change_frame import changeFrame
 from remove_frame import removeFrame
 
-def buttonFrame(main_frame, sub_total_input, tax_input, total_input, choice, cash_input, change_input):
+def buttonFrame(main_frame, sub_total_input, tax_input, total_input, choice, cash_input, change_input, operator):
     # Button Frame
     button_frame = tk.Frame(
         main_frame,
@@ -20,6 +20,7 @@ def buttonFrame(main_frame, sub_total_input, tax_input, total_input, choice, cas
 
     calFrame(button_frame, sub_total_input, tax_input, total_input)
     changeFrame(button_frame, choice, cash_input, change_input)
-    removeFrame(button_frame)
+    removeFrame(button_frame, choice, cash_input, change_input, operator,
+    sub_total_input, tax_input, total_input)
 
     return button_frame
